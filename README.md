@@ -17,8 +17,55 @@ the meta graphs formed from these meta nodes, and then align the individual node
 over three different MPI applications highlight that our meta graph heuristic has better accuracy and scales to large
 graphs compared to network alignment and graph auto encder methods.
 
-chain_matching.ipynb: This file implements the Meta Process-Graph heuristic. Update the graph file I/O in block 3. Use the hyperparameter settings in Block 5.
-For message race and amg2013: rev=False, norm_sens_high = False, lcs = False, num_proc = # of processes in the event graph
-For MCB Grid: rev = True, norm_sens_high = True, lcs = True, num_proc = # of processes in the event graph
+## Dependencies
 
-GAE_updt.ipynb implements the graph auto-encoder benchmark. Set the graph I/O in block 2 and the hyperparameters for number of processes (NUM_PROCS), number of training epochs (NUM_EPOCHS) and number of experiments (NUM_EXPS).
+Once the repository has been cloned into your machine, enter the root directory of the project for setup.
+
+```
+. setup.sh
+```
+
+The dependencies for the project are in requirements.txt. The system must have python3 installed.
+
+## Running Meta Graph Heuristic
+
+Open
+```
+/meta-graph-heuristic/chain_matching.ipynb
+```
+This file implements the Meta Process-Graph heuristic. 
+### Environment Setup
+* Update the graph file I/O in block 3. 
+* Use the hyperparameter settings in Block 5.
+* For message race and amg2013: rev=False, norm_sens_high = False, lcs = False, num_proc = # of processes in the event graph
+* For MCB Grid: rev = True, norm_sens_high = True, lcs = True, num_proc = # of processes in the event graph
+```
+Hyperparameters:
+rev             true (runs backward pass) | false (runs forward pass)
+norm_sens_high  true (Uses high sensitivity polynomial)
+lcs             whether to use (true) Longest Common Substring or (false) String Matching for thresholding criterion
+num_proc        Number of processes in the event graph. Needed to make accurate meta graph
+```
+## Benchmarks for GAE and NetAlign
+
+### Graph Auto Encoder
+Open
+```
+/GAE/GAE_updt.ipynb
+```
+GAE_updt.ipynb implements the graph auto-encoder benchmark. 
+#### Hyperparameter Setup
+In Block 2
+* Set the graph I/O in nx.read_graphml("YOUR_GRAPHML_FILE")
+* NUM_PROCS:  Number of processes
+* NUM_EPOCHS: Number of training epochs
+* NUM_EXPS:   Number of experiments
+
+### NetAlign
+Visit [https://www.cs.purdue.edu/homes/dgleich/codes/netalignmc/]
+
+## Publication
+The theory and the artifacts of this project has been explained in the paper "Application of Graph Alignment Techniques for Identifying Sources of Non-Determinism in MPI Simulations"
+
+## Acknowledgements
+
