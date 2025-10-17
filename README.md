@@ -65,7 +65,7 @@ In Block 2
 Visit [https://www.cs.purdue.edu/homes/dgleich/codes/netalignmc/]
 
 ## Publication
-The theory and the artifacts of this project has been explained in the paper "Application of Graph Alignment Techniques for Identifying Sources of Non-Determinism in MPI Simulations"
+The theory and the artifacts of this project has been explained in the paper "Application of Graph Alignment Techniques for Identifying Sources of Non-Determinism in MPI Simulations" D. Pandey, J. Marquez, S. Bhowmick, M. Taufer in the International Journal of High Performance Computing Applications (IJHPCA accepted).
 
 ## Acknowledgements
-
+This work has been partially funded by NSF CCF grant #1900888 and #1900765.
